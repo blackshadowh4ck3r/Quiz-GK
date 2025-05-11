@@ -5,9 +5,9 @@
         "correct": 3
     },
     {
-        "question": "Which planet is known as the Red Planet?",
-        "options": ["Venus", "Mars", "Jupiter"],
-        "correct": 3
+        "question": "ফ্রান্সের রাজধানী কী?",
+        "options": ["প্যারিস", "Mars", "Jupiter"],
+        "correct": 1
     },
     {
         "question": "Who painted the Mona Lisa?",
