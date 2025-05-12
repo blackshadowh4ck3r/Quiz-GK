@@ -1,15 +1,41 @@
 [
     {
-        "question": "your name ",
-        "options": ["by", "box", "abdul wadud"],
-        "correct": 3
+        "question": "এই অ্যাপটি কে তৈরি করেছে?",
+        "options": ["যেকোনো ডেভেলপার", "ডেভেলপার শ্যাডো", "আমি জানি না।"],
+        "correct": 2
     },
     {
-        "question": "ফ্রান্সের রাজধানী কী?",
-        "options": ["প্যারিস", "Mars", "Jupiter"],
+        "question": "সপ্তাহে কত দিন থাকে?",
+        "options": ["৭", "৩০", "৩৬০"],
         "correct": 1
     },
+   
     {
+        "question": "পরিষ্কার দিনে আকাশের রঙ কী হয়?",
+        "options": ["সাদা", "কালো", "নীল"],
+        "correct": 3
+    },
+     
+   {
+        "question": "ইংরেজি বর্ণমালায় কয়টি অক্ষর আছে?",
+        "options": ["২২টি", "১০টি", "২৬টি"],
+        "correct": 3
+    },
+    
+   {
+        "question": "কোন প্রাণীকে "জঙ্গলের রাজা" বলা হয়?",
+        "options": ["বাঘ", "সিংহ", "হাতি"],
+        "correct": 2
+    },
+    
+   {
+        "question": "পরিষ্কার দিনে আকাশের রঙ কী হয়?",
+        "options": ["সাদা", "কালো", "নীল"],
+        "correct": 3
+    },
+    
+     
+       {
         "question": "Who painted the Mona Lisa?",
         "options": ["Van Gogh", "Da Vinci", "Picasso"],
         "correct": 2
