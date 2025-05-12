@@ -36,8 +36,8 @@
     
      
        {
-        "question": "Who painted the Mona Lisa?",
-        "options": ["Van Gogh", "Da Vinci", "Picasso"],
+        "question": "একটি মাকড়সার কয়টি পা থাকে?",
+        "options": ["৪টি", "৮টি", "৬টি"],
         "correct": 2
     }
 ]
