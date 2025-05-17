@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz Game</title>
+  <title>কুইজ গেম</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -45,7 +45,6 @@
       background-color: white;
       cursor: pointer;
       font-size: 1rem;
-      transition: all 0.3s ease;
     }
 
     .option-btn:hover:not([disabled]) {
@@ -96,17 +95,17 @@
 <body>
   <div class="quiz-container">
     <div id="quiz-content">
-      <div class="question" id="question">Loading...</div>
+      <div class="question" id="question">লোড হচ্ছে...</div>
       <div class="options-container" id="options-container"></div>
       <div class="controls">
-        <div>Score: <span id="score">0</span></div>
-        <button id="next-btn">Next Question</button>
+        <div>স্কোর: <span id="score">0</span></div>
+        <button id="next-btn">পরবর্তী প্রশ্ন</button>
       </div>
     </div>
     <div class="results" id="results">
-      <h2>Quiz Completed!</h2>
-      <p>Your final score: <span id="final-score">0</span></p>
-      <button onclick="location.reload()">Restart Quiz</button>
+      <h2>কুইজ সম্পন্ন হয়েছে!</h2>
+      <p>আপনার চূড়ান্ত স্কোর: <span id="final-score">0</span></p>
+      <button onclick="location.reload()">পুনরায় শুরু করুন</button>
     </div>
   </div>
 
@@ -115,7 +114,6 @@
     let currentQuestion = 0;
     let score = 0;
 
-    // Shuffle function using Fisher-Yates algorithm
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -124,20 +122,32 @@
       return array;
     }
 
-    function loadQuestion() {
+    async function translateToBengali(text) {
+      try {
+        const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=bn&dt=t&q=${encodeURIComponent(text)}`);
+        const data = await res.json();
+        return data[0].map(item => item[0]).join('');
+      } catch (e) {
+        return text; // fallback
+      }
+    }
+
+    async function loadQuestion() {
       const questionObj = quizData[currentQuestion];
-      document.getElementById('question').textContent = questionObj.question;
+      const translatedQuestion = await translateToBengali(questionObj.question);
+      document.getElementById('question').textContent = translatedQuestion;
 
       const optionsContainer = document.getElementById('options-container');
       optionsContainer.innerHTML = '';
 
-      questionObj.options.forEach((option, index) => {
+      for (let i = 0; i < questionObj.options.length; i++) {
+        const translatedOption = await translateToBengali(questionObj.options[i]);
         const button = document.createElement('button');
         button.classList.add('option-btn');
-        button.textContent = option;
-        button.addEventListener('click', () => checkAnswer(index));
+        button.textContent = translatedOption;
+        button.addEventListener('click', () => checkAnswer(i));
         optionsContainer.appendChild(button);
-      });
+      }
     }
 
     function checkAnswer(selectedIndex) {
@@ -179,7 +189,6 @@
 
     document.getElementById('next-btn').addEventListener('click', showNextQuestion);
 
-    // Load quiz data from external JSON and shuffle
     fetch("https://blackshadowh4ck3r.github.io/Quiz-GK/Data.json")
       .then(res => res.json())
       .then(data => {
@@ -188,11 +197,11 @@
           return q;
         });
 
-        quizData = shuffleArray(quizData); // Shuffle questions here
+        quizData = shuffleArray(quizData);
         loadQuestion();
       })
       .catch(err => {
-        document.getElementById('question').textContent = 'Error loading quiz data.';
+        document.getElementById('question').textContent = 'কুইজ ডেটা লোড করতে সমস্যা হয়েছে।';
         console.error(err);
       });
   </script>
