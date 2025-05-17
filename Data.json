@@ -1,36 +1,36 @@
 [
     {
         "question": "What color are strawberries?",
-        "options": ["Red", "Black", "Pink"],
-        "correct": 1
+        "options": ["30", "7", "360"],
+        "correct": 2
     },
     {
-        "question": "সপ্তাহে কত দিন থাকে?",
-        "options": ["৭", "৩০", "৩৬০"],
-        "correct": 1
+        "question": "How many hours are there in a day?",
+        "options": ["12 hours", "48 hours", "24 hours"],
+        "correct": 3
     },
    
     {
-        "question": "পরিষ্কার দিনে আকাশের রঙ কী হয়?",
-        "options": ["সাদা", "কালো", "নীল"],
+        "question": "What is the color of the sky on a clear day?",
+        "options": ["Black", "White", "Blue"],
         "correct": 3
     },
      
    {
-        "question": "ইংরেজি বর্ণমালায় কয়টি অক্ষর আছে?",
-        "options": ["২২টি", "১০টি", "২৬টি"],
+        "question": "How many letters are there in the English alphabet?",
+        "options": ["22", "10", "26"],
         "correct": 3
     },
     
    {
-        "question": "কোন প্রাণীকে জঙ্গলের রাজা বলা হয়?",
-        "options": ["বাঘ", "সিংহ", "হাতি"],
+        "question": "Which animal is known as the King of the Jungle?",
+        "options": ["Tiger", "Lion", "Elephant"],
         "correct": 2
     },
     
    {
-        "question": "পরিষ্কার দিনে আকাশের রঙ কী হয়?",
-        "options": ["সাদা", "কালো", "নীল"],
+        "question": "How many legs does a spider have?",
+        "options": ["6", "8", "4"],
         "correct": 3
     },
     
