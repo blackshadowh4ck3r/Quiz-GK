@@ -1,8 +1,8 @@
 [
     {
-        "question": "এই অ্যাপটি কে তৈরি করেছে?",
-        "options": ["যেকোনো ডেভেলপার", "ডেভেলপার শ্যাডো", "আমি জানি না।"],
-        "correct": 2
+        "question": "What color are strawberries?",
+        "options": ["Red", "Black", "Pink"],
+        "correct": 1
     },
     {
         "question": "সপ্তাহে কত দিন থাকে?",
